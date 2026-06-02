@@ -557,27 +557,26 @@ Se usa para crear diseños responsivos (adaptables a celular, tablet y desktop).
 }
 
 .progreso-barra-fondo {
-  background-color: var(--crust);
-  border: 1px solid var(--surface-1);
+  background-color: var(--surface-0);
+  border: 1px solid var(--surface-2);
   border-radius: 8px;
-  height: 16px;
+  height: 20px;
   width: 100%;
   overflow: hidden;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .progreso-barra-llena {
-  background: linear-gradient(90deg, var(--mauve) 0%, var(--sapphire) 100%);
+  background-color: var(--green);
   height: 100%;
   border-radius: 6px;
-  width: 0%; /* Will be set inline dynamic */
   transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 8px rgba(202, 158, 230, 0.4);
+  box-shadow: 0 0 8px rgba(166, 209, 137, 0.4);
 }
 
 .progreso-container:hover .progreso-barra-llena {
-  filter: brightness(1.1);
-  box-shadow: 0 0 12px rgba(133, 193, 220, 0.6);
+  filter: brightness(1.15);
+  box-shadow: 0 0 12px rgba(166, 209, 137, 0.6);
 }
 
 .jersey-15-regular, .jersey-10-regular {
