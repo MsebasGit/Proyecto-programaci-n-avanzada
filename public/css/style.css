@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
 /*
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
@@ -43,7 +45,7 @@
   /* Define color destacado para elementos importantes */
 
   /* Mejorado: Fuentes modernas para mayor limpieza */
-  --fuente-principal: 'Press Start 2P', 'Georgia', serif;
+  --fuente-principal: 'Jersey 10', sans-serif;
   /* Establece fuente principal del sitio */
   --fuente-codigo: 'Fira Code', 'Courier New', monospace;
   /* Define fuente para mostrar código */
@@ -56,6 +58,10 @@
 /* =========================================================
    RESET Y BASE
    ========================================================= */
+html {
+  font-size: 135%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -142,8 +148,8 @@ p {
 }
 
 .caja li {
-  font-family: var(--fuente-codigo);
-  /* Aplicamos fuente de código a las habilidades */
+  font-family: var(--fuente-principal);
+  /* Aplicamos fuente principal a las habilidades */
   color: var(--sapphire);
   margin-top: 8px;
 }
@@ -226,7 +232,7 @@ textarea {
   color: var(--text);
   border: 1px solid var(--surface-1);
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: inherit;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
@@ -244,8 +250,9 @@ button[type="submit"] {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
+  font-family: var(--fuente-principal);
   align-self: center;
   width: 100%;
   transition: background-color 0.3s, transform 0.1s;
@@ -367,7 +374,7 @@ nav a {
   text-decoration: none;
   color: var(--text);
   font-weight: 600;
-  font-family: var(--fuente-codigo);
+  font-family: var(--fuente-principal);
   text-transform: uppercase;
   font-size: 0.85rem;
   transition: color 0.3s ease;
@@ -393,7 +400,7 @@ footer {
   margin-top: auto;
   /* Empuja el footer al fondo de la pantalla si hay poco contenido */
   border-top: 2px solid var(--surface-0);
-  font-family: var(--fuente-codigo);
+  font-family: var(--fuente-principal);
   /* Estilo de consola/código para tus apuntes */
   font-size: 0.85rem;
 }
@@ -542,7 +549,7 @@ Se usa para crear diseños responsivos (adaptables a celular, tablet y desktop).
 .progreso-label {
   display: flex;
   justify-content: space-between;
-  font-family: var(--fuente-codigo);
+  font-family: var(--fuente-principal);
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--subtext-1);
@@ -571,4 +578,10 @@ Se usa para crear diseños responsivos (adaptables a celular, tablet y desktop).
 .progreso-container:hover .progreso-barra-llena {
   filter: brightness(1.1);
   box-shadow: 0 0 12px rgba(133, 193, 220, 0.6);
+}
+
+.jersey-15-regular, .jersey-10-regular {
+  font-family: "Jersey 10", sans-serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
 }

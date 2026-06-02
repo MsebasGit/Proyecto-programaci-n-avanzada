@@ -11,12 +11,19 @@
         }
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/startup.js"></script>
-    {{--
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;600;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-    --}}
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
+        .jersey-15-regular, .jersey-10-regular {
+            font-family: "Jersey 10", sans-serif !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() }}">
     <title>@yield('titulo') — Mi Proyecto</title>
 </head>
 
