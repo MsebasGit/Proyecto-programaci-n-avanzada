@@ -26,7 +26,6 @@
             <li><a href="{{ route('inicio') }}">Inicio</a></li>
             <li><a href="{{ route('sobre-mi') }}">Sobre mí</a></li>
             <li><a href="{{ route('materias') }}">Materias</a></li>
-            <li><a href="{{ route('productos.index') }}">Productos</a></li>
             <li><a href="{{ route('contacto') }}">Contacto</a></li>
         </ul>
     </nav>
