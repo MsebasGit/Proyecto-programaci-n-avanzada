@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Materia;
+use App\Models\Contacto;
 
 /**
  * PaginaController
@@ -91,8 +92,9 @@ class PaginaController extends Controller
             'email'   => 'required|email',
             'mensaje' => 'required|min:10',
         ]);
-        // Si llegamos aquí, todos los datos son válidos.
-        // No se guardan en BD todavía — eso queda para un curso avanzado.
+        // Guardar el mensaje en la base de datos
+        Contacto::create($validated);
+
         return redirect()->route('contacto')
             ->with('exito', 'Tu mensaje fue enviado correctamente.');
     }
