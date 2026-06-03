@@ -17,14 +17,14 @@
 <div class="caja">
     <h2>Habilidades</h2>
     <div class="habilidades-lista">
-        @foreach($habilidades as $habilidad => $porcentaje)
+        @foreach($habilidades as $habilidad)
         <div class="progreso-container">
             <div class="progreso-label">
-                <span>{{ $habilidad }}</span>
-                <span>{{ $porcentaje }}%</span>
+                <span>{{ $habilidad->nombre }}</span>
+                <span>{{ $habilidad->porcentaje }}%</span>
             </div>
             <div class="progreso-barra-fondo">
-                <div class="progreso-barra-llena" style="width: {{ $porcentaje }}%;"></div>
+                <div class="progreso-barra-llena" style="width: {{ $habilidad->porcentaje }}%;"></div>
             </div>
         </div>
         @endforeach
