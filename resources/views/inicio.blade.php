@@ -18,7 +18,7 @@
 
 <div class="caja">
     <h2>Bienvenido</h2>
-    <div style="width: 100%; text-align: center;">
+    <div class="centrado">
         <p>Mi portafolio académico ^_^</p>
     </div>
 </div>

@@ -7,7 +7,7 @@
 
 <div class="caja">
     <h2>Perfíl Académico</h2>
-    <div style="width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 15px;">
+    <div class="perfil-info">
         <p><strong>Nombre:</strong> {{ $nombre }}</p>
         <p><strong>Carrera:</strong> {{ $carrera }}</p>
         <p><strong>Semestre:</strong> {{ $semestre }}</p>
@@ -16,7 +16,7 @@
 
 <div class="caja">
     <h2>Habilidades</h2>
-    <div style="width: 100%; display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+    <div class="habilidades-lista">
         @foreach($habilidades as $habilidad => $porcentaje)
         <div class="progreso-container">
             <div class="progreso-label">
