@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Materia;
 use App\Models\Contacto;
+use App\Models\Habilidad;
 
 /**
  * PaginaController
@@ -35,13 +36,7 @@ class PaginaController extends Controller
      */
     public function sobreMi()
     {
-        $habilidades = [
-            'PHP' => 75,
-            'HTML/CSS' => 90,
-            'JavaScript' => 60,
-            'Laravel' => 55,
-            'GIT' => 70,
-        ];
+        $habilidades = Habilidad::all();
 
         return view('sobre-mi', [
             'nombre' => 'Medrano Sebastian',
