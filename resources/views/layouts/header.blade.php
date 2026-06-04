@@ -25,6 +25,7 @@
             <li><a href="{{ route('sobre-mi') }}">Sobre mí</a></li>
             <li><a href="{{ route('materias') }}">Materias</a></li>
             <li><a href="{{ route('contacto') }}">Contacto</a></li>
+            <li><a href="{{ route('login') }}">Panel de Administrador</a></li>
         </ul>
     </nav>
 
