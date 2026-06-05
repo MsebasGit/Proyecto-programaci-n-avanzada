@@ -18,8 +18,6 @@
 
 <div class="caja">
     <h2>Bienvenido</h2>
-    <div class="centrado">
-        <p>Mi portafolio académico ^_^</p>
-    </div>
+    <p>Mi portafolio académico ^_^</p>
 </div>
 @endsection

@@ -69,7 +69,6 @@ html {
 }
 
 body {
-    /* font-family: "VT323", monospace; (Mantenida como comentario si querías estilo retro) */
     font-family: var(--fuente-principal);
     /* Usa fuente principal definida anteriormente */
     color: var(--color-texto);
@@ -99,6 +98,13 @@ h2 {
     color: var(--mauve);
     margin-bottom: 15px;
     padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--yellow);
+    margin-bottom: 15px;
 }
 
 p {
@@ -141,18 +147,7 @@ p {
     text-align: center;
 }
 
-.caja ul {
-    list-style-position: inside;
-    /* Viñetas alineadas */
-    padding-left: 10px;
-}
 
-.caja li {
-    font-family: var(--fuente-principal);
-    /* Aplicamos fuente principal a las habilidades */
-    color: var(--sapphire);
-    margin-top: 8px;
-}
 
 .caja>img {
     height: 50%;
@@ -168,13 +163,6 @@ p {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
-    background-color: var(--crust);
-    border-radius: 8px;
-
-    border: 3px dotted var(--surface-2);
-
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 tbody tr {
@@ -203,11 +191,6 @@ td {
     text-align: center;
 }
 
-td em {
-    color: var(--green);
-    font-style: normal;
-    font-weight: 600;
-}
 
 /* * * * FORMULARIO * * * */
 form {
@@ -277,44 +260,13 @@ button[type="submit"]:active {
 /* Cierra bloque de estilos para párrafos */
 
 /* Por clase: afecta a cualquier elemento con class="resaltado" */
-.resaltado {
-    /* Selecciona elementos con clase resaltado */
-    background-color: var(--yellow);
-    color: var(--crust);
-    /* Aplica fondo amarillo suave para destacar contenido */
-    font-weight: bold;
-    /* Hace el texto más visible aumentando grosor */
-    padding: 2px 5px;
-    border-radius: 4px;
-}
-
 /* Cierra bloque de clase resaltado */
 
 /* Por ID: afecta al elemento con id="sobre-mi" (único en la página) */
 /* Explica selector único */
-#sobre-mi {
-    /* Selecciona elemento con identificador (ID) específico */
-    background-color: var(--surface-0);
-    /* Aplica fondo claro para sección destacada */
-    padding: 30px;
-    /* Añade espacio interno para mejor presentación */
-    border-radius: var(--radio-borde);
-}
-
 /* Cierra bloque de ID sobre-mi */
 
 /* === HEADER === */
-header {
-    background-color: var(--mantle);
-    color: var(--text);
-    padding: 20px 40px;
-    width: 100%;
-    display: flex;
-    /* el estudiante aplica flexbox aquí */
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid var(--crust);
-}
 
 /* === NAVEGACIÓN === */
 nav {
@@ -401,8 +353,6 @@ footer {
     /* Empuja el footer al fondo de la pantalla si hay poco contenido */
     border-top: 2px solid var(--surface-0);
     font-family: var(--fuente-principal);
-    /* Estilo de consola/código para tus apuntes */
-    font-size: 0.85rem;
 }
 
 .footer-contenedor {
@@ -420,11 +370,6 @@ footer {
     /* Invierte el símbolo de copyright tradicional si no renderiza el nativo */
 }
 
-.footer-redes {
-    display: flex;
-    gap: 20px;
-}
-
 .footer-redes a {
     color: var(--sapphire);
     text-decoration: none;
@@ -437,22 +382,13 @@ footer {
     text-decoration: underline;
 }
 
-main>section {
-    margin-bottom: 40px;
-}
 
-.perfil-contenido {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-}
 
 /*
 Media Query es una función de CSS que permite aplicar estilos según el tamaño o características de la pantalla.
 Se usa para crear diseños responsivos (adaptables a celular, tablet y desktop).
 */
 
-/* @media: cuando la pantalla es menor a 768px (celulares) */
 @media (max-width: 768px) {
     /* ajustes para celular */
 
@@ -470,33 +406,10 @@ Se usa para crear diseños responsivos (adaptables a celular, tablet y desktop).
         text-align: center;
     }
 
-    .caja ul {
-        list-style-position: inside;
-        display: inline-block;
-        text-align: left;
-    }
-
     table {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
-    }
-
-    .perfil-contenido {
-        flex-direction: column;
-    }
-
-    header {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-        gap: 20px;
     }
 
     nav {
@@ -578,18 +491,13 @@ Se usa para crear diseños responsivos (adaptables a celular, tablet y desktop).
     box-shadow: 0 0 12px rgba(166, 209, 137, 0.6);
 }
 
-.jersey-10-regular {
-    font-family: "Jersey 10", sans-serif !important;
-    font-weight: 400 !important;
-    font-style: normal !important;
-}
 
 /* =========================================================
    CLASES REFACTORIZADAS DE VISTAS (EVITANDO INLINE STYLES)
    ========================================================= */
-.centrado {
-    width: 100%;
+.caja>p {
     text-align: center;
+    width: 100%;
 }
 
 .perfil-info {
@@ -623,28 +531,18 @@ Se usa para crear diseños responsivos (adaptables a celular, tablet y desktop).
     text-align: center;
 }
 
-.titulo-resumen {
-    color: var(--yellow);
+.tarjeta-resumen h3 {
     font-size: 1.1rem;
     margin-bottom: 5px;
     text-align: center;
 }
 
-.valor-resumen {
+.tarjeta-resumen p {
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--green);
     margin: 0;
     text-align: center;
-}
-
-.texto-centrado {
-    text-align: center;
-}
-
-.texto-negrita-centrado {
-    text-align: center;
-    font-weight: bold;
 }
 
 .alerta-exito {
@@ -656,15 +554,89 @@ Se usa para crear diseños responsivos (adaptables a celular, tablet y desktop).
     width: 100%;
     margin-bottom: 20px;
     text-align: center;
-    font-family: var(--fuente-codigo);
+    font-family: var(--fuente-principal);
     font-size: 0.9rem;
 }
 
 .mensaje-error {
     color: var(--red);
-    font-family: var(--fuente-codigo);
-    font-size: 0.8rem;
+    font-family: var(--fuente-principal);
     margin-top: -10px;
     margin-bottom: 10px;
     display: block;
+}
+
+/* === ADMIN PANEL STYLES === */
+.btn-small {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-family: var(--fuente-principal);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.2s, transform 0.1s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-small:active {
+    transform: scale(0.95);
+}
+
+.btn-editar {
+    background-color: var(--sapphire);
+    color: var(--crust);
+}
+
+.btn-editar:hover {
+    background-color: var(--blue);
+}
+
+.btn-eliminar {
+    background-color: var(--red);
+    color: var(--crust);
+}
+
+.btn-eliminar:hover {
+    background-color: #f38ba8;
+}
+
+.btn-cancelar {
+    display: block;
+    text-decoration: none;
+    background-color: var(--surface-2);
+    color: var(--text);
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: var(--fuente-principal);
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn-cancelar:hover {
+    background-color: var(--surface-1);
+}
+
+.acciones-col {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contenedor-tabla {
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: var(--crust);
+    border-radius: 8px;
+    border: 3px dotted var(--surface-2);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
 }

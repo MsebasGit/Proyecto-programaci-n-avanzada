@@ -36,7 +36,7 @@ class PaginaController extends Controller
      */
     public function sobreMi()
     {
-        $habilidades = Habilidad::all();
+        $habilidades = Habilidad::all() -> reverse();
 
         return view('sobre-mi', [
             'nombre' => 'Medrano Sebastian',
@@ -55,7 +55,7 @@ class PaginaController extends Controller
         // ANTES (Parte 2): instanciaba objetos manualmente con new Materia(...)
         // AHORA (Parte 3): Eloquent recupera todos los registros de la tabla 'materias'
         // La interfaz pública de Materia es IDÉNTICA — la vista no necesita cambios.
-        $materias = Materia::all();
+        $materias = Materia::all()->reverse();
 
         // avg() devuelve null si la colección está vacía → ?? 0 evita el error.
         $promedio = round($materias->avg(fn(Materia $m) => $m->getNota()) ?? 0, 2);

@@ -25,7 +25,17 @@
             <li><a href="{{ route('sobre-mi') }}">Sobre mí</a></li>
             <li><a href="{{ route('materias') }}">Materias</a></li>
             <li><a href="{{ route('contacto') }}">Contacto</a></li>
-            <li><a href="{{ route('login') }}">Panel de Administrador</a></li>
+            @auth
+                <li><a href="{{ route('admin') }}">Panel de Administrador</a></li>
+                <li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style="color: var(--red);">Cerrar Sesión</a>
+                </li>
+            @else
+                <li><a href="{{ route('login') }}">Panel de Administrador</a></li>
+            @endauth
         </ul>
     </nav>
 
