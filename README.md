@@ -22,7 +22,7 @@ Aplicación web desarrollada como proyecto final del curso de Programación Avan
 - Página de perfil personal del estudiante
 - Listado de materias con notas y estados
 - Formulario de contacto con validación PHP
-- [Agregar aquí las funcionalidades que implementaste]
+- Creación de un administrador con la capacidad de agregar, modificar y eliminar materias y habilidades
 
 ## Instalación local
 1. Clonar el repositorio: `git clone [URL-de-tu-repo]`
@@ -34,6 +34,21 @@ Aplicación web desarrollada como proyecto final del curso de Programación Avan
 7. Ejecutar migraciones: `php artisan migrate`
 8. Levantar servidor: `php artisan serve`
 9. Abrir en el navegador: http://127.0.0.1:8000
+
+## Configuración de administrador
+Para configurar un usuario como administradir ejecute en su terminal:
+```
+$ php artisan tinker
+    
+```
+Y dentro de la consola de Tinker:
+```
+App\Models\User::create([
+    'name' => '[NOMBRE]',
+    'email' => '[EMAIL]',
+    'password' => Hash::make('[]')
+]);
+````
 
 ## Autor
 Sebastian Jorge Medrano Chacolla
