@@ -20,6 +20,11 @@ Route::get('/contacto', [PaginaController::class, 'contacto'])->name('contacto')
 // RUTA 5 — Contacto (procesar)
 Route::post('/contacto', [PaginaController::class, 'procesarContacto'])->name('contacto.procesar');
 
+// Sudoku
+use App\Http\Controllers\SudokuController;
+Route::get('/sudoku', [SudokuController::class, 'sudoku'])->name('sudoku');
+Route::post('/sudoku/resolver', [SudokuController::class, 'resolve'])->name('sudoku.resolver');
+
 // RUTA
 Route::get('/login', [AuthController::class, 'show'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
