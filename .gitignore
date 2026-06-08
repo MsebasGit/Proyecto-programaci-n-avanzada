@@ -23,3 +23,5 @@ yarn-error.log
 /.zed
 /.antigravitycli
 ./database/database.sqlite
+/bin/
+

@@ -55,6 +55,8 @@
     /* Define sombra ligera para profundidad visual */
 }
 
+
+
 /* =========================================================
    RESET Y BASE
    ========================================================= */
@@ -180,9 +182,7 @@ th {
     color: var(--lavender);
     padding: 15px;
     text-align: center;
-    font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.9rem;
 }
 
 td {
@@ -313,7 +313,6 @@ nav ul {
 nav li {
     background-color: var(--surface-0);
     border-radius: 4px;
-    overflow: hidden;
     transition: transform 0.2s ease, background-color 0.2s ease;
     display: flex;
     align-items: center;
@@ -351,8 +350,9 @@ footer {
     padding: 25px 20px;
     margin-top: auto;
     /* Empuja el footer al fondo de la pantalla si hay poco contenido */
-    border-top: 2px solid var(--surface-0);
+    border-top: 0px solid var(--surface-0);
     font-family: var(--fuente-principal);
+
 }
 
 .footer-contenedor {
@@ -373,7 +373,6 @@ footer {
 .footer-redes a {
     color: var(--sapphire);
     text-decoration: none;
-    font-weight: 600;
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -639,4 +638,180 @@ Se usa para crear diseños responsivos (adaptables a celular, tablet y desktop).
     border: 3px dotted var(--surface-2);
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
     margin-top: 15px;
+}
+
+/* =========================================================
+   ESTILOS DE SUDOKU
+   ========================================================= */
+.contents {
+    display: contents;
+}
+
+.sudoku-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.sudoku-controles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 15px;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--mantle);
+    padding: 20px;
+    border-radius: var(--radio-borde);
+    border: 1px solid var(--surface-0);
+    box-shadow: var(--sombra-suave);
+}
+
+.sudoku-controles div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sudoku-controles label {
+    font-size: 0.9rem;
+    color: var(--subtext-1);
+}
+
+.sudoku-controles input[type="number"] {
+    width: 120px;
+    text-align: center;
+}
+
+.sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    gap: 0;
+    border: 4px solid var(--surface-2); /* Borde exterior grueso temático */
+    width: max-content;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+}
+
+.sudoku-cell {
+    width: 3.2rem;
+    height: 3.2rem;
+    text-align: center;
+    font-size: 1.6rem;
+    border: 1px solid var(--surface-0); /* Borde fino por defecto */
+    outline: none;
+    font-family: var(--fuente-principal);
+    background-color: var(--crust);
+    color: var(--text);
+    transition: background-color 0.2s, color 0.2s;
+    /* Quitar flechas de input number */
+    -moz-appearance: textfield;
+}
+
+.sudoku-cell::-webkit-outer-spin-button,
+.sudoku-cell::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Bordes derechos gruesos cada 3 columnas (excepto la última) */
+.sudoku-cell:nth-child(3n):not(:nth-child(9n)) {
+    border-right: 3px solid var(--surface-2);
+}
+
+/* Bordes inferiores gruesos cada 3 filas (filas 3 y 6) */
+.row-3 .sudoku-cell, .row-6 .sudoku-cell {
+    border-bottom: 3px solid var(--surface-2);
+}
+
+/* Estilo para las pistas iniciales vs lo que escribe el usuario */
+.readonly-cell {
+    background-color: var(--surface-0);
+    color: var(--overlay-2);
+    font-weight: bold;
+}
+
+.sudoku-cell:not(.readonly-cell) {
+    background-color: var(--mantle);
+    color: var(--green);
+}
+
+.sudoku-cell:not(.readonly-cell):focus {
+    background-color: var(--surface-1);
+    color: var(--yellow);
+    box-shadow: inset 0 0 5px rgba(229, 200, 144, 0.2);
+}
+
+.sudoku-acciones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.btn-sudoku {
+    padding: 12px 28px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-family: var(--fuente-principal);
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    box-shadow: var(--sombra-suave);
+    transition: background-color 0.2s, transform 0.1s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-sudoku:active {
+    transform: scale(0.95);
+}
+
+.btn-resolver {
+    background-color: var(--green);
+    color: var(--crust);
+}
+
+.btn-resolver:hover {
+    background-color: #b8e29a;
+}
+
+.btn-nuevo {
+    background-color: var(--blue);
+    color: var(--crust);
+}
+
+.btn-nuevo:hover {
+    background-color: #9dbeff;
+}
+
+.btn-otra-vez {
+    background-color: var(--surface-2);
+    color: var(--text);
+}
+
+.btn-otra-vez:hover {
+    background-color: var(--surface-1);
+}
+
+.alerta-error {
+    background-color: rgba(231, 130, 132, 0.15);
+    border: 2px dashed var(--red);
+    color: var(--red);
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: var(--fuente-principal);
+    font-size: 0.9rem;
 }

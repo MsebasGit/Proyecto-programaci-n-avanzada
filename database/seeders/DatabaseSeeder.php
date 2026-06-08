@@ -15,11 +15,13 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Sebastian Medrano',
-            'email' => 'sebastian11medrano@gmail.com',
-            'password' => '1HEz8kIqyPvJYI',
-        ]);
+        User::firstOrCreate(
+            ['email' => 'sebastian11medrano@gmail.com'],
+            [
+                'name' => 'Sebastian Medrano',
+                'password' => '1HEz8kIqyPvJYI',
+            ]
+        );
 
         $this->call([
             MateriaSeeder::class,

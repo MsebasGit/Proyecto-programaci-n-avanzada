@@ -9,9 +9,6 @@ use Illuminate\Validation\Rule;
 
 class AdminController extends Controller
 {
-    /**
-     * Display the admin panel with all materias and habilidades.
-     */
     public function index(Request $request)
     {
         $materias = Materia::all() -> reverse();
@@ -30,9 +27,6 @@ class AdminController extends Controller
         return view('admin', compact('materias', 'habilidades', 'editMateria', 'editHabilidad'));
     }
 
-    /**
-     * Store a newly created Materia in storage.
-     */
     public function storeMateria(Request $request)
     {
         $validated = $request->validate([
@@ -47,9 +41,6 @@ class AdminController extends Controller
         return redirect()->route('admin')->with('exito', 'Materia agregada correctamente.');
     }
 
-    /**
-     * Update the specified Materia in storage.
-     */
     public function updateMateria(Request $request, Materia $materia)
     {
         $validated = $request->validate([
@@ -69,9 +60,6 @@ class AdminController extends Controller
         return redirect()->route('admin')->with('exito', 'Materia actualizada correctamente.');
     }
 
-    /**
-     * Remove the specified Materia from storage.
-     */
     public function destroyMateria(Materia $materia)
     {
         $materia->delete();
@@ -79,9 +67,6 @@ class AdminController extends Controller
         return redirect()->route('admin')->with('exito', 'Materia eliminada correctamente.');
     }
 
-    /**
-     * Store a newly created Habilidad in storage.
-     */
     public function storeHabilidad(Request $request)
     {
         $validated = $request->validate([
@@ -94,9 +79,6 @@ class AdminController extends Controller
         return redirect()->route('admin')->with('exito', 'Habilidad agregada correctamente.');
     }
 
-    /**
-     * Update the specified Habilidad in storage.
-     */
     public function updateHabilidad(Request $request, Habilidad $habilidad)
     {
         $validated = $request->validate([
@@ -109,9 +91,6 @@ class AdminController extends Controller
         return redirect()->route('admin')->with('exito', 'Habilidad actualizada correctamente.');
     }
 
-    /**
-     * Remove the specified Habilidad from storage.
-     */
     public function destroyHabilidad(Habilidad $habilidad)
     {
         $habilidad->delete();

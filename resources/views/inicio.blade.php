@@ -16,8 +16,5 @@
     </div>
 </div>
 
-<div class="caja">
-    <h2>Bienvenido</h2>
-    <p>Mi portafolio académico ^_^</p>
-</div>
+
 @endsection

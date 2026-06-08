@@ -16,6 +16,7 @@ Aplicación web desarrollada como proyecto final del curso de Programación Avan
 - Laravel 11.x
 - CSS3 (diseño propio, sin frameworks externos)
 - MySQL / SQLite
+- Haskell + GHC (para el solucionador lógico de Sudoku)
 - GIT + GitHub
 
 ## Funcionalidades
@@ -23,6 +24,11 @@ Aplicación web desarrollada como proyecto final del curso de Programación Avan
 - Listado de materias con notas y estados
 - Formulario de contacto con validación PHP
 - Creación de un administrador con la capacidad de agregar, modificar y eliminar materias y habilidades
+- **Juego de Sudoku Interactivo**:
+  - Pistas editables basadas en la dificultad seleccionada (30 a 80 pistas).
+  - Integrado con un solucionador lógico (algoritmo DPLL) desarrollado y compilado en Haskell.
+  - Opción de autocompletar el juego ("¡Haskell, resuélvelo!").
+  - Opción de verificar en tiempo real si el tablero rellenado por el usuario es correcto ("Verificar mi solución").
 
 ## Instalación local
 1. Clonar el repositorio: `git clone [URL-de-tu-repo]`
@@ -32,8 +38,14 @@ Aplicación web desarrollada como proyecto final del curso de Programación Avan
 5. Generar clave de aplicación: `php artisan key:generate`
 6. Configurar base de datos en `.env`
 7. Ejecutar migraciones: `php artisan migrate`
-8. Levantar servidor: `php artisan serve`
-9. Abrir en el navegador: http://127.0.0.1:8000
+8. Compilar el solucionador de Sudoku (Haskell):
+   ```bash
+   mkdir -p bin
+   ghc -O2 sudokuCompleto.hs -o bin/solucionador_sudoku
+   ```
+9. Levantar servidor: `php artisan serve`
+10. Abrir en el navegador: http://127.0.0.1:8000
+
 
 ## Configuración de administrador
 Para configurar un usuario como administradir ejecute en su terminal:
